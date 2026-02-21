@@ -69,6 +69,24 @@ height:auto;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
+     .lista-produtos{
+display:grid;
+grid-template-columns:repeat(2, 1fr);
+gap:18px 40px;
+font-size:22px;
+margin:40px 0;
+}
+
+.lista-produtos div{
+padding:12px 0;
+border-bottom:1px solid #ddd;
+transition:0.3s;
+}
+
+.lista-produtos div:hover{
+background:#e9f1f5;
+padding-left:10px;
+}
 </style>
 
 </head>
@@ -81,30 +99,20 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
 <h2>Nossos Produtos</h2>
 
-<ul class="lista-produtos">
+<div class="lista-produtos">
 
-<li>➤ Tinta Acrílica</li>
-<li>➤ Tinta Standard</li>
-<li>➤ Tinta Premium</li>
-<li>➤ Tinta Emborrachada</li>
-<li>➤ Massa PVA</li>
-<li>➤ Massa Acrílica</li>
-<li>➤ Textura Lisa</li>
-<li>➤ Grafiato</li>
-<li>➤ Projetada</li>
-<li>➤ Granline</li>
-<li>➤ Seladora</li>
-<li>➤ Massa Niveladora</li>
-
-</ul>
-
-<p class="catalogo-texto">
-E muito mais. Venha conferir nossos produtos de qualidade direto da fábrica.
-</p>
-
-<img src="img/nossos-produtos-a4.jpg" 
-     alt="Catálogo Tintas Qualy Quimy"
-     class="catalogo-img">
+<div>➤ Tinta Acrílica</div>
+<div>➤ Tinta Standard</div>
+<div>➤ Tinta Premium</div>
+<div>➤ Tinta Emborrachada</div>
+<div>➤ Massa PVA</div>
+<div>➤ Massa Acrílica</div>
+<div>➤ Textura Lisa</div>
+<div>➤ Grafiato</div>
+<div>➤ Projetada</div>
+<div>➤ Granline</div>
+<div>➤ Seladora</div>
+<div>➤ Massa Niveladora</div>
 
 </div>
 
