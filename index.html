@@ -112,10 +112,91 @@ height:24px;
 width:auto;
 object-fit:contain;
 }
+ .consultor{
+padding:60px 20px;
+text-align:center;
+}
+
+.consultor-grid{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:30px;
+}
+
+.consultor-item{
+cursor:pointer;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+width:180px;
+}
+
+.consultor-item:hover{
+transform:translateY(-5px);
+}
+
+.icone-consultor{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.consultor-modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.consultor-box{
+background:#fff;
+max-width:420px;
+margin:8% auto;
+padding:30px;
+border-radius:15px;
+text-align:center;
+position:relative;
+}
+
+.consultor-box button{
+display:block;
+width:100%;
+margin:10px 0;
+padding:12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#2c5364;
+color:#fff;
+font-weight:600;
+}
+
+.consultor-box button:hover{
+background:#203a43;
+}
+
+.fechar{
+position:absolute;
+right:15px;
+top:10px;
+cursor:pointer;
+font-size:22px;
+}
 </style>
 
 </head>
-
+<div id="consultorModal" class="consultor-modal">
+  <div class="consultor-box">
+    <span class="fechar" onclick="fecharConsultor()">&times;</span>
+    <div id="consultorConteudo"></div>
+  </div>
+</div>
 <body>
 
 <header>
@@ -138,7 +219,16 @@ Solicitar Orçamento Agora
 <h2>Fábrica de tinta no Alto Tietê com entrega rápida</h2>
 <h2>Tinta emborrachada em Itaquaquecetuba com alta durabilidade</h2>
 </section>
+<section class="consultor">
+<h2>Descubra a tinta ideal para sua obra</h2>
 
+<div class="consultor-grid">
+  <div class="consultor-item" onclick="abrirConsultor()">
+    <div class="icone-consultor">🎨</div>
+    <p>Tintas</p>
+  </div>
+</div>
+</section>
 <section class="section">
 <h2>Nossos Produtos</h2>
 
@@ -226,8 +316,87 @@ width="100%" height="400" style="border:0;" loading="lazy"></iframe>
 document.getElementById("nomeEmpresa").innerText = empresa.nome;
 document.getElementById("descricaoEmpresa").innerText = empresa.descricao;
 </script>
+ <script>
+const numeroWhats = "5511954950044";
+
+function abrirConsultor(){
+document.getElementById("consultorModal").style.display="block";
+mostrarAplicacao();
+}
+
+function fecharConsultor(){
+document.getElementById("consultorModal").style.display="none";
+}
+
+function mostrarAplicacao(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Onde será aplicada a tinta?</h3>
+<button onclick="areaInterna()">🏠 Área Interna</button>
+<button onclick="areaExterna()">🌤 Área Externa</button>
+<button onclick="pisoGaragem()">🚗 Piso / Garagem</button>
+<button onclick="telhado()">🏠 Telhado</button>
+`;
+}
+
+function areaInterna(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>A parede é nova ou repintura?</h3>
+<button onclick="produtoFinal('Qualy Color para parede nova interna')">Parede Nova</button>
+<button onclick="repintura()">Repintura</button>
+`;
+}
+
+function repintura(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Escolha a linha desejada:</h3>
+<button onclick="produtoFinal('Tinta Standard para repintura interna')">Standard</button>
+<button onclick="produtoFinal('Tinta Premium para repintura interna')">Premium</button>
+`;
+}
+
+function areaExterna(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Escolha a tinta para área externa:</h3>
+<button onclick="produtoFinal('Tinta Standard para área externa')">Standard</button>
+<button onclick="produtoFinal('Tinta Premium para área externa')">Premium</button>
+<button onclick="produtoFinal('Tinta Emborrachada para área externa')">Emborrachada</button>
+`;
+}
+
+function pisoGaragem(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Escolha a tinta para piso:</h3>
+<button onclick="produtoFinal('Tinta Piso para garagem')">Tinta Piso</button>
+<button onclick="produtoFinal('Tinta Emborrachada para piso')">Emborrachada</button>
+`;
+}
+
+function telhado(){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Escolha a tinta para telhado:</h3>
+<button onclick="produtoFinal('Tinta Emborrachada para telhado')">Emborrachada</button>
+<button onclick="produtoFinal('Tinta para Telha')">Tinta para Telha</button>
+`;
+}
+
+function produtoFinal(produto){
+document.getElementById("consultorConteudo").innerHTML=`
+<h3>Produto recomendado:</h3>
+<p><strong>${produto}</strong></p>
+<p>Ideal para sua aplicação com alto rendimento e excelente cobertura.</p>
+<button onclick="irWhats('${produto}')">Falar no WhatsApp</button>
+`;
+}
+
+function irWhats(produto){
+let mensagem = `Olá, quero orçamento de ${produto}.`;
+let url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+window.open(url,'_blank');
+}
+</script>
 </body>
 </html>
+
 
 
 
