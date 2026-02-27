@@ -118,6 +118,49 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-5px);
 }
+ header .btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  animation: pulseBtn 2s infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+header .btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg) translateX(-100%);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+header .btn:hover::before {
+  transform: rotate(45deg) translateX(200%);
+}
+
+@keyframes pulseBtn {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
+  }
+  30% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(37,211,102,0.5);
+  }
+  70% {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px 10px rgba(37,211,102,0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,0);
+  }
+}
 
 /* CONSULTOR */
 
@@ -570,6 +613,7 @@ function produtoFinal(nome, descricao){
   `;
 }
 </script>
+
 
 
 
