@@ -408,34 +408,35 @@ width="100%" height="400" style="border:0;" loading="lazy"></iframe>
 <!-- SCRIPT CONSULTOR -->
 <script>
 const numeroWhats = "5511954950044";
+
 let historico = []; // guarda histórico para voltar
 
 function abrirConsultor(tipo){
-  document.getElementById("consultorModal").style.display = "flex";
-  
+  historico = []; // reset ao abrir
+  document.getElementById("consultorModal").style.display="flex";
+
   switch(tipo){
     case 'tintas':
-      mostrarTintas();
+      mostrarTintasInicial();
       break;
     case 'massas':
-      mostrarEscolhaMassas();
+      mostrarMassas();
       break;
     case 'texturas':
-      mostrarEscolhaTexturas();
+      mostrarTexturas();
       break;
     case 'preparacao':
-      mostrarEscolhaPreparacao();
+      mostrarPreparacao();
       break;
   }
 }
 
 function fecharConsultor(){
-  document.getElementById("consultorModal").style.display = "none";
+  document.getElementById("consultorModal").style.display="none";
 }
 
-// ================= TINTAS ===================
-function mostrarTintas(){
-  historico = [];
+// ---------- TINTAS ----------
+function mostrarTintasInicial(){
   document.getElementById("consultorConteudo").innerHTML = `
     <h3>Onde será aplicada a tinta?</h3>
     <button onclick="etapaInterna()">🏠 Área Interna</button>
@@ -445,22 +446,14 @@ function mostrarTintas(){
   `;
 }
 
-// --- Subetapas Tintas ---
+// Etapas internas
 function etapaInterna(){
   document.getElementById("consultorConteudo").innerHTML = `
-    <h3>É parede nova ou repintura?</h3>
+    <h3>Parede nova ou repintura?</h3>
     <button onclick="produtoFinal('Qualy Color Uso Interno (Parede Nova)','Indicada para áreas internas, excelente cobertura, baixo odor e ótimo rendimento.')">Parede Nova</button>
-    <button onclick="etapaRepinturaInterna()">Repintura</button>
-    <br><br><button onclick="mostrarTintas()">⬅ Voltar</button>
-  `;
-}
-
-function etapaRepinturaInterna(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Escolha a linha para repintura interna:</h3>
-    <button onclick="produtoFinal('Tinta Standard Interna','Boa cobertura e acabamento uniforme.')">Standard</button>
-    <button onclick="produtoFinal('Tinta Premium Interna','Acabamento premium e maior durabilidade.')">Premium</button>
-    <br><br><button onclick="etapaInterna()">⬅ Voltar</button>
+    <button onclick="produtoFinal('Tinta Standard ou Premium para Repintura Interna','Boa cobertura e acabamento uniforme.')">Repintura</button>
+    <br><br>
+    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
   `;
 }
 
@@ -469,8 +462,10 @@ function etapaExterna(){
     <h3>Qual tipo de tinta você procura?</h3>
     <button onclick="produtoFinal('Tinta Standard Externa','Boa cobertura e custo-benefício.')">Standard</button>
     <button onclick="produtoFinal('Tinta Premium Externa','Maior resistência ao sol e chuva.')">Premium</button>
+    <button onclick="produtoFinal('Tinta Piso Externa','Ideal para áreas externas com tráfego moderado.')">Piso</button>
     <button onclick="produtoFinal('Tinta Emborrachada Externa','Proteção contra infiltração e microfissuras.')">Emborrachada</button>
-    <br><br><button onclick="mostrarTintas()">⬅ Voltar</button>
+    <br><br>
+    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
   `;
 }
 
@@ -479,7 +474,8 @@ function etapaPiso(){
     <h3>Para piso ou garagem?</h3>
     <button onclick="produtoFinal('Tinta Piso','Resistente ao tráfego, ideal para garagens.')">Tinta Piso</button>
     <button onclick="produtoFinal('Tinta Emborrachada para Piso','Proteção contra infiltrações e tráfego intenso.')">Emborrachada</button>
-    <br><br><button onclick="mostrarTintas()">⬅ Voltar</button>
+    <br><br>
+    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
   `;
 }
 
@@ -488,76 +484,62 @@ function etapaTelhado(){
     <h3>Para telha?</h3>
     <button onclick="produtoFinal('Tinta Emborrachada para Telhado','Reduz infiltrações e aumenta conforto térmico.')">Emborrachada</button>
     <button onclick="produtoFinal('Tinta para Telha','Proteção e acabamento durável para telhas.')">Tinta para Telha</button>
-    <br><br><button onclick="mostrarTintas()">⬅ Voltar</button>
+    <br><br>
+    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
   `;
 }
 
-// ================= MASSAS ===================
-function mostrarEscolhaMassas(){
-  historico = [];
+// ---------- MASSAS ----------
+function mostrarMassas(){
   document.getElementById("consultorConteudo").innerHTML = `
     <h3>Qual massa você precisa?</h3>
-    <button onclick="selecionarMassa('Massa PVA','Acabamento liso, ótima cobertura para paredes internas.')">Massa PVA</button>
-    <button onclick="selecionarMassa('Massa Acrílica','Ideal para acabamento fino, resistência e durabilidade.')">Massa Acrílica</button>
-    <br><br><button onclick="fecharConsultor()">⬅ Voltar</button>
+    <button onclick="produtoFinal('Massa PVA','Ideal para preparação e nivelamento de paredes internas.')">Massa PVA</button>
+    <button onclick="produtoFinal('Massa Acrílica','Acabamento liso e resistente, pronta para pintura.')">Massa Acrílica</button>
+    <br><br>
+    <button onclick="fecharConsultor()">⬅ Voltar</button>
   `;
 }
 
-function selecionarMassa(nome, descricao){
-  historico.push({func: selecionarMassa, args:[nome, descricao]});
-  produtoFinal(nome, descricao);
-}
-
-// ================= TEXTURAS ===================
-function mostrarEscolhaTexturas(){
-  historico = [];
+// ---------- TEXTURAS ----------
+function mostrarTexturas(){
   document.getElementById("consultorConteudo").innerHTML = `
     <h3>Qual textura você procura?</h3>
-    <button onclick="selecionarTextura('Grafiato','Textura rústica e elegante, fácil de aplicar.')">Grafiato</button>
-    <button onclick="selecionarTextura('Textura Lisa','Acabamento liso e moderno, perfeito para interiores.')">Textura Lisa</button>
-    <button onclick="selecionarTextura('Textura Projetada','Aplicação rápida, acabamento uniforme e resistente.')">Textura Projetada</button>
-    <button onclick="selecionarTextura('Granline','Ideal para muros e fachadas com alto rendimento.')">Granline</button>
-    <br><br><button onclick="fecharConsultor()">⬅ Voltar</button>
+    <button onclick="produtoFinal('Grafiato','Ótimo para acabamento decorativo, resistente e elegante.')">Grafiato</button>
+    <button onclick="produtoFinal('Textura Lisa','Acabamento uniforme e suave, ideal para qualquer parede.')">Textura Lisa</button>
+    <button onclick="produtoFinal('Textura Projetada','Rendimento eficiente e acabamento moderno.')">Textura Projetada</button>
+    <button onclick="produtoFinal('Granline','Acabamento rústico e resistente para áreas externas.')">Granline</button>
+    <br><br>
+    <button onclick="fecharConsultor()">⬅ Voltar</button>
   `;
 }
 
-function selecionarTextura(nome, descricao){
-  historico.push({func: selecionarTextura, args:[nome, descricao]});
-  produtoFinal(nome, descricao);
-}
-
-// ================= PREPARAÇÃO ===================
-function mostrarEscolhaPreparacao(){
-  historico = [];
+// ---------- PREPARAÇÃO DE PAREDE ----------
+function mostrarPreparacao(){
   document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Qual produto de preparação você precisa?</h3>
-    <button onclick="selecionarPreparacao('Seladora Acrílica','Uniformiza a absorção e prepara a parede para pintura.')">Seladora Acrílica</button>
-    <button onclick="selecionarPreparacao('Fundo Preparador','Garante melhor aderência da tinta e acabamento final.')">Fundo Preparador</button>
-    <br><br><button onclick="fecharConsultor()">⬅ Voltar</button>
+    <h3>Produto para preparação de parede:</h3>
+    <button onclick="produtoFinal('Seladora Acrílica','Melhora aderência da tinta e uniformiza a absorção da parede.')">Seladora Acrílica</button>
+    <button onclick="produtoFinal('Fundo Preparador','Ideal para selar e preparar superfícies antes da pintura.')">Fundo Preparador</button>
+    <br><br>
+    <button onclick="fecharConsultor()">⬅ Voltar</button>
   `;
 }
 
-function selecionarPreparacao(nome, descricao){
-  historico.push({func: selecionarPreparacao, args:[nome, descricao]});
-  produtoFinal(nome, descricao);
-}
-
-// ================= PRODUTO FINAL ===================
+// ---------- FINAL ---------- 
 function produtoFinal(nome, descricao){
-  const mensagem = encodeURIComponent(`Olá! Tenho interesse em ${nome}. Pode me enviar mais informações e valores?`);
-
+  const mensagem = encodeURIComponent(`Olá! Tenho interesse em ${nome}. ${descricao} Pode me enviar mais informações e valores?`);
   document.getElementById("consultorConteudo").innerHTML = `
     <h3>Produto recomendado:</h3>
-    <p style="font-weight:bold; font-size:18px;">${nome}</p>
-    <p style="color:#555; margin-bottom:20px;">${descricao}</p>
+    <p style="font-weight:bold; font-size:20px; margin-bottom:10px;">${nome}</p>
+    <p style="margin-bottom:20px; color:#555;">${descricao}</p>
     <a href="https://wa.me/${numeroWhats}?text=${mensagem}" target="_blank">
-      <button style="background:#25D366;color:white;padding:14px 20px;font-weight:600;border-radius:10px;">Solicitar Orçamento no WhatsApp</button>
+      <button style="background:#25D366;color:white; padding:14px 20px; font-weight:600; border-radius:10px;">Solicitar Orçamento no WhatsApp</button>
     </a>
     <br><br>
-    <button onclick="fecharConsultor()" style="padding:10px 15px;">⬅ Voltar</button>
+    <button onclick="fecharConsultor()" style="margin-top:15px; padding:10px 15px;">⬅ Voltar</button>
   `;
 }
 </script>
+
 
 
 
