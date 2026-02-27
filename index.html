@@ -405,63 +405,125 @@ width="100%" height="400" style="border:0;" loading="lazy"></iframe>
 
 
 <!-- SCRIPT CONSULTOR -->
+<!-- SCRIPT CONSULTOR -->
 <script>
 const numeroWhats = "5511954950044";
 
-function abrirConsultor(tipo){
-document.getElementById("consultorModal").style.display="block";
+function abrirConsultor(tipo) {
+  document.getElementById("consultorModal").style.display = "flex";
 
-let conteudo = "";
+  if (tipo === 'tintas') {
+    etapaTintasInicial();
+  }
 
-if(tipo === "tintas"){
-conteudo = `
-<h3>Escolha a tinta:</h3>
-<button onclick="irWhats('Tinta Acrílica')">Tinta Acrílica</button>
-<button onclick="irWhats('Tinta Emborrachada')">Tinta Emborrachada</button>
-<button onclick="irWhats('Tinta para Piso')">Tinta para Piso</button>
-`;
+  if (tipo === 'massas') {
+    document.getElementById("consultorConteudo").innerHTML = `
+      <h3>Qual massa você precisa?</h3>
+      <button onclick="produtoFinal('Massa PVA')">Massa PVA</button>
+      <button onclick="produtoFinal('Massa Acrílica')">Massa Acrílica</button>
+    `;
+  }
+
+  if (tipo === 'texturas') {
+    document.getElementById("consultorConteudo").innerHTML = `
+      <h3>Qual textura você procura?</h3>
+      <button onclick="produtoFinal('Grafiato')">Grafiato</button>
+      <button onclick="produtoFinal('Textura Lisa')">Textura Lisa</button>
+      <button onclick="produtoFinal('Textura Projetada')">Textura Projetada</button>
+      <button onclick="produtoFinal('Granline')">Granline</button>
+    `;
+  }
+
+  if (tipo === 'preparacao') {
+    document.getElementById("consultorConteudo").innerHTML = `
+      <h3>Produto para preparação:</h3>
+      <button onclick="produtoFinal('Seladora Acrílica')">Seladora Acrílica</button>
+      <button onclick="produtoFinal('Fundo Preparador')">Fundo Preparador</button>
+    `;
+  }
 }
 
-if(tipo === "massas"){
-conteudo = `
-<h3>Escolha a massa:</h3>
-<button onclick="irWhats('Massa PVA')">Massa PVA</button>
-<button onclick="irWhats('Massa Acrílica')">Massa Acrílica</button>
-`;
+function fecharConsultor() {
+  document.getElementById("consultorModal").style.display = "none";
 }
 
-if(tipo === "texturas"){
-conteudo = `
-<h3>Escolha a textura:</h3>
-<button onclick="irWhats('Grafiato')">Grafiato</button>
-<button onclick="irWhats('Textura Lisa')">Textura Lisa</button>
-<button onclick="irWhats('Textura Projetada')">Textura Projetada</button>
-<button onclick="irWhats('Granline')">Granline</button>
-`;
+function etapaTintasInicial() {
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>Onde será aplicada a tinta?</h3>
+
+    <button onclick="etapaInterna()">🏠 Área Interna</button>
+    <button onclick="etapaExterna()">🌤 Área Externa</button>
+    <button onclick="etapaPiso()">🚗 Piso / Garagem</button>
+    <button onclick="etapaTelhado()">🏠 Telhado</button>
+  `;
 }
 
-if(tipo === "preparacao"){
-conteudo = `
-<h3>Preparação de superfície:</h3>
-<button onclick="irWhats('Seladora')">Seladora</button>
-<button onclick="irWhats('Fundo Preparador')">Fundo Preparador</button>
-<button onclick="irWhats('Liqui Brilho')">Liqui Brilho</button>
-`;
+function etapaInterna() {
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>É parede nova ou repintura?</h3>
+
+    <button onclick="produtoFinal('Qualy Color Uso Interno (Parede Nova)')">Parede Nova</button>
+    <button onclick="produtoFinal('Tinta Standard ou Premium para Repintura Interna')">Repintura</button>
+
+    <br><br>
+    <button onclick="etapaTintasInicial()">⬅ Voltar</button>
+  `;
 }
 
-document.getElementById("consultorConteudo").innerHTML = conteudo;
+function etapaExterna() {
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>Qual tipo de tinta você procura?</h3>
+
+    <button onclick="produtoFinal('Tinta Standard Externa')">Standard</button>
+    <button onclick="produtoFinal('Tinta Premium Externa')">Premium</button>
+    <button onclick="produtoFinal('Tinta Piso Externa')">Piso</button>
+    <button onclick="produtoFinal('Tinta Emborrachada Externa')">Emborrachada</button>
+
+    <br><br>
+    <button onclick="etapaTintasInicial()">⬅ Voltar</button>
+  `;
 }
 
-function fecharConsultor(){
-document.getElementById("consultorModal").style.display="none";
+function etapaPiso() {
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>Para piso ou garagem?</h3>
+
+    <button onclick="produtoFinal('Tinta Piso')">Tinta Piso</button>
+    <button onclick="produtoFinal('Tinta Emborrachada para Piso')">Emborrachada</button>
+
+    <br><br>
+    <button onclick="etapaTintasInicial()">⬅ Voltar</button>
+  `;
 }
 
-function irWhats(produto){
-let mensagem = `Olá, quero orçamento de ${produto}.`;
-let url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
-window.open(url,'_blank');
+function etapaTelhado() {
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>Para telha?</h3>
+
+    <button onclick="produtoFinal('Tinta Emborrachada para Telhado')">Emborrachada</button>
+    <button onclick="produtoFinal('Tinta para Telha')">Tinta para Telha</button>
+
+    <br><br>
+    <button onclick="etapaTintasInicial()">⬅ Voltar</button>
+  `;
+}
+
+function produtoFinal(produto) {
+  var mensagem = encodeURIComponent("Olá! Quero orçamento para " + produto + ".");
+
+  document.getElementById("consultorConteudo").innerHTML = `
+    <h3>Recomendado:</h3>
+    <p style="font-weight:bold; font-size:18px;">${produto}</p>
+
+    <a href="https://wa.me/${numeroWhats}?text=${mensagem}" target="_blank">
+      <button style="background:#25D366;color:white;">
+        Falar no WhatsApp
+      </button>
+    </a>
+
+    <br><br>
+    <button onclick="etapaTintasInicial()">⬅ Voltar ao início</button>
+  `;
 }
 </script>
 
-</body>
-</html>
