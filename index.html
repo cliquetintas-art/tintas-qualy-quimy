@@ -7,41 +7,7 @@
 
 <title>Tinta em Itaquaquecetuba Direto da Fábrica | Alto Tietê</title>
 
-<meta name="description" content="Procurando tinta em Itaquaquecetuba? Compre direto da fábrica com alto rendimento e excelente cobertura. Entrega rápida no Alto Tietê. Solicite orçamento agora.">
-
-<meta name="keywords" content="tinta em Itaquaquecetuba, tinta emborrachada Itaquaquecetuba, fornecedor de tinta Alto Tietê, fábrica de tinta Itaquaquecetuba">
-
-<meta property="og:title" content="Tinta em Itaquaquecetuba | Fábrica Tintas Qualy Quimy">
-<meta property="og:description" content="Compre tinta em Itaquaquecetuba direto da fábrica com alto rendimento e entrega rápida.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cliquetintas-art.github.io/tintas-qualy-quimy/">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- SCHEMA LOCAL BUSINESS -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "LocalBusiness",
- "name": "Tintas Qualy Quimy",
- "image": "https://cliquetintas-art.github.io/tintas-qualy-quimy/img/avaliacao-google-tinta-itaqua.jpg",
- "telephone": "+5511954950044",
- "priceRange": "$$",
- "url": "https://cliquetintas-art.github.io/tintas-qualy-quimy/",
- "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "Rua Leiria, 45",
-   "addressLocality": "Itaquaquecetuba",
-   "addressRegion": "SP",
-   "postalCode": "08587-100",
-   "addressCountry": "BR"
- },
- "areaServed": "Itaquaquecetuba e Alto Tietê",
- "sameAs": [
-   "https://instagram.com/tintasqualyquimy"
- ]
-}
-</script>
 
 <style>
 
@@ -52,6 +18,8 @@ font-family:'Poppins', sans-serif;
 background:#f5f7fa;
 color:#333;
 }
+
+/* ================= HEADER ================= */
 
 header{
 background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
@@ -71,7 +39,9 @@ max-width:800px;
 margin:auto;
 }
 
-.btn{
+/* ===== BOTÃO PRINCIPAL ANIMADO ===== */
+
+.btn-principal{
 display:inline-block;
 margin-top:30px;
 padding:18px 35px;
@@ -80,208 +50,43 @@ color:white;
 text-decoration:none;
 font-weight:600;
 border-radius:50px;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#1ebe5d;
-transform:scale(1.05);
-}
-
-.section{
-padding:90px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:30px;
-font-size:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-header .btn:hover::before {
- /* ===== BOTÃO AVALIAÇÕES GOOGLE ===== */
-
-.btn-avaliacoes{
-  display:inline-block;
-  margin-top:30px;
-  padding:18px 35px;
-  background:#fbbc05;
-  color:#000;
-  font-weight:600;
-  border-radius:50px;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  animation:pulseBtnGoogle 2s infinite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index:1;
-}
-
-.btn-avaliacoes::before{
-  content:"";
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:rgba(255,255,255,0.3);
-  transform:rotate(45deg) translateX(-100%);
-  transition:all 0.5s ease;
-  z-index:0;
-}
-
-.btn-avaliacoes:hover::before{
-  transform:rotate(45deg) translateX(200%);
-}
-
-@keyframes pulseBtnGoogle{
-  0%{
-    transform:scale(1);
-    box-shadow:0 0 0 0 rgba(251,188,5,0.7);
-  }
-  30%{
-    transform:scale(1.05);
-    box-shadow:0 0 15px 5px rgba(251,188,5,0.5);
-  }
-  70%{
-    transform:scale(1.03);
-    box-shadow:0 0 10px 10px rgba(251,188,5,0.3);
-  }
-  100%{
-    transform:scale(1);
-    box-shadow:0 0 0 0 rgba(251,188,5,0);
-  }
-}
-
-.btn-avaliacoes:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 25px 10px rgba(251,188,5,0.7);
-}
-  transform: rotate(45deg) translateX(200%);
-}
-
-@keyframes pulseBtn {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
-  }
-  30% {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px 5px rgba(37,211,102,0.5);
-  }
-  70% {
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 10px rgba(37,211,102,0.3);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,0);
-  }
-}
-
-/* CONSULTOR */
-
-.consultor{
-padding:70px 20px;
-text-align:center;
-background:#ffffff;
-}
-
-.consultor-grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-margin-top:40px;
-}
-
-.consultor-item{
-cursor:pointer;
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
-width:190px;
-}
-
-.consultor-item:hover{
-transform:translateY(-6px);
-}
-
-.icone-consultor{
-font-size:42px;
-margin-bottom:12px;
-}
-
-.consultor-modal{
-display:none;
-position:fixed;
-z-index:999;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.consultor-box{
-background:#fff;
-max-width:450px;
-margin:8% auto;
-padding:35px;
-border-radius:18px;
-text-align:center;
 position:relative;
+overflow:hidden;
+z-index:1;
+animation:pulseBtn 2s infinite;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.consultor-box button{
-display:block;
-width:100%;
-margin:12px 0;
-padding:14px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-background:#2c5364;
-color:#fff;
-font-weight:600;
-}
-
-.consultor-box button:hover{
-background:#203a43;
-}
-
-.fechar{
+.btn-principal::before{
+content:"";
 position:absolute;
-right:18px;
-top:12px;
-cursor:pointer;
-font-size:22px;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:rgba(255,255,255,0.25);
+transform:rotate(45deg) translateX(-100%);
+transition:all 0.5s ease;
+z-index:0;
 }
 
-/* AVALIAÇÕES PREMIUM */
+.btn-principal:hover::before{
+transform:rotate(45deg) translateX(200%);
+}
+
+.btn-principal:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px 10px rgba(37,211,102,0.6);
+}
+
+@keyframes pulseBtn{
+0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+30%{transform:scale(1.05);box-shadow:0 0 15px 5px rgba(37,211,102,0.5);}
+70%{transform:scale(1.03);box-shadow:0 0 10px 10px rgba(37,211,102,0.3);}
+100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+/* ================= AVALIAÇÕES ================= */
 
 .avaliacoes{
 background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -290,39 +95,50 @@ text-align:center;
 color:#fff;
 }
 
-.avaliacoes h2{
-font-size:32px;
-margin-bottom:20px;
-}
-
-.avaliacoes-card{
-background:#ffffff;
-max-width:750px;
-margin:40px auto;
-padding:45px;
-border-radius:20px;
-box-shadow:0 25px 60px rgba(0,0,0,0.25);
-color:#333;
-transition:0.3s;
-}
-
-.avaliacoes-card:hover{
-transform:translateY(-8px);
-}
-
-.avaliacoes-card img{
-width:100%;
-border-radius:14px;
-margin-bottom:25px;
-}
-
-.avaliacoes-card p{
-font-size:20px;
+.btn-avaliacoes{
+display:inline-block;
+margin-top:30px;
+padding:18px 35px;
+background:#fbbc05;
+color:#000;
 font-weight:600;
-margin-bottom:20px;
+border-radius:50px;
+text-decoration:none;
+position:relative;
+overflow:hidden;
+animation:pulseGoogle 2s infinite;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.
+.btn-avaliacoes::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:rgba(255,255,255,0.3);
+transform:rotate(45deg) translateX(-100%);
+transition:all 0.5s ease;
+}
+
+.btn-avaliacoes:hover::before{
+transform:rotate(45deg) translateX(200%);
+}
+
+.btn-avaliacoes:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px 10px rgba(251,188,5,0.6);
+}
+
+@keyframes pulseGoogle{
+0%{transform:scale(1);box-shadow:0 0 0 0 rgba(251,188,5,0.7);}
+30%{transform:scale(1.05);box-shadow:0 0 15px 5px rgba(251,188,5,0.5);}
+70%{transform:scale(1.03);box-shadow:0 0 10px 10px rgba(251,188,5,0.3);}
+100%{transform:scale(1);box-shadow:0 0 0 0 rgba(251,188,5,0);}
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -330,63 +146,6 @@ padding:30px;
 background:#000;
 color:white;
 font-size:14px;
-}
-.whatsapp-fixo{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  z-index: 9999;
-  cursor: pointer;
-
-  /* animação combinada */
-  animation: pulseGlow 2s infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-@keyframes pulseGlow {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,0.7), inset 0 0 0 rgba(255,255,255,0);
-  }
-  30% {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px 5px rgba(37,211,102,0.5), inset 0 0 5px rgba(255,255,255,0.3);
-  }
-  70% {
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 10px rgba(37,211,102,0.3), inset 0 0 8px rgba(255,255,255,0.4);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,0), inset 0 0 0 rgba(255,255,255,0);
-  }
-}
-
-/* efeito hover extra */
-.whatsapp-fixo:hover{
-  transform: scale(1.08);
-  box-shadow: 0 0 25px 10px rgba(37,211,102,0.7), inset 0 0 10px rgba(255,255,255,0.5);
-}
-.instagram-fixo{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#E4405F;
-color:white;
-padding:10px 14px;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -398,268 +157,30 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <h1>Fábrica de Tinta em Itaquaquecetuba | Tintas Qualy Quimy</h1>
 
 <p>
-A Tintas Qualy Quimy é fabricante de tinta acrílica, tinta emborrachada, tinta para piso, massa PVA, grafiato e texturas em Itaquaquecetuba – SP, atendendo todo Alto Tietê com preço direto de fábrica.
+A Tintas Qualy Quimy é fabricante de tinta acrílica, tinta emborrachada, tinta para piso, massa PVA e texturas.
 </p>
 
-<a class="btn" href="https://wa.me/5511954950044?text=Olá,%20quero%20orçamento%20de%20tinta%20em%20Itaquaquecetuba." target="_blank">
-Solicitar Orçamento Agora
+<a class="btn-principal" href="https://wa.me/5511954950044" target="_blank">
+🚀 Solicitar Andamento Agora
 </a>
+
 </header>
-<!-- BLOCO SEO -->
-<section class="section">
-<h2>Tinta em Itaquaquecetuba direto da fábrica</h2>
 
-<p style="text-align:center;max-width:900px;margin:20px auto;font-size:18px;">
-A Tintas Qualy Quimy fornece tinta acrílica, tinta emborrachada, tinta para piso, massa PVA, massa acrílica, seladora acrílica, grafiato, textura lisa, textura projetada e granline com alto rendimento e excelente cobertura.
-</p>
-
-<p style="text-align:center;font-size:17px;">
-Estamos localizados na Rua Leiria, 45 – Itaquaquecetuba – SP.
-</p>
-</section>
-
-
-<!-- CONSULTOR COMPLETO -->
-<section class="consultor">
-<h2>Descubra o produto ideal para sua obra</h2>
-
-<div class="consultor-grid">
-
-<div class="consultor-item" onclick="abrirConsultor('tintas')">
-<div class="icone-consultor">🎨</div>
-<p>Tintas</p>
-</div>
-
-<div class="consultor-item" onclick="abrirConsultor('massas')">
-<div class="icone-consultor">🧱</div>
-<p>Massas</p>
-</div>
-
-<div class="consultor-item" onclick="abrirConsultor('texturas')">
-<div class="icone-consultor">🏗</div>
-<p>Texturas</p>
-</div>
-
-<div class="consultor-item" onclick="abrirConsultor('preparacao')">
-<div class="icone-consultor">🛠</div>
-<p>Preparação de Parede</p>
-</div>
-
-
-</div>
-</section>
-
-
-<div id="consultorModal" class="consultor-modal">
-<div class="consultor-box">
-<span class="fechar" onclick="fecharConsultor()">&times;</span>
-<div id="consultorConteudo"></div>
-</div>
-</div>
-
-
-<!-- AVALIAÇÕES PREMIUM -->
-
-</section>
 <section class="avaliacoes">
-<div class="container">
 <h2>Avaliação dos Clientes</h2>
-<p class="estrelas">
-<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-</p>
-<p>5.0 de 5 estrelas no Google</p>
-<a href="https://www.google.com/search?sca_esv=33649ae82cf5c68d&sxsrf=ANbL-n7OAvgpDp62TOyPTbUNV0zr58owCA:1771813708183&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x_-dnpEjlMvfa2ar3JxRf-UKmPAND_n92Rp7qElS7d77TtYGAMN1ITxvq6HVXQEP0hn1kXbYnBiWRf78joffULSy6HBZR3cSXMvF-gB7mfpHJ-VKPA%3D%3D&q=RA+Despachante+Coment%C3%A1rios&sa=X&ved=2ahUKEwjtxry1yO6SAxUnqJUCHWCgCb0Q0bkNegQIKBAF&biw=1366&bih=615&dpr=1"
-   target="_blank"
-   class="btn-avaliacoes">
-   ⭐ Ver Avaliações no Google
+<p>★★★★★ 5.0 no Google</p>
+
+<a href="https://www.google.com/maps" target="_blank" class="btn-avaliacoes">
+⭐ Ver Avaliações no Google
 </a>
-</div>
 
-<!-- LOCALIZAÇÃO -->
-<section class="section">
-<h2>Localização – Fábrica em Itaquaquecetuba</h2>
-
-<div style="margin-top:40px;">
-<iframe src="https://www.google.com/maps?q=Rua+Leiria+45+Itaquaquecetuba+SP+08587100&output=embed"
-width="100%" height="400" style="border:0;" loading="lazy"></iframe>
-</div>
 </section>
-
-
-<!-- FAQ -->
-<section class="section">
-<h2>Perguntas Frequentes</h2>
-
-<h3>Onde comprar tinta em Itaquaquecetuba?</h3>
-<p>Direto na fábrica da Tintas Qualy Quimy, Rua Leiria, 45 – Itaquaquecetuba – SP.</p>
-
-<h3>Vocês atendem lojistas?</h3>
-<p>Sim, fornecemos com preço especial para depósitos e lojas.</p>
-
-<h3>Entregam no Alto Tietê?</h3>
-<p>Sim, entregamos em toda região do Alto Tietê.</p>
-</section>
-
-
-<!-- BOTÕES FIXOS -->
-<a class="whatsapp-fixo" href="https://wa.me/5511954950044" target="_blank">WhatsApp</a>
-<a class="instagram-fixo" href="https://instagram.com/tintasqualyquimy" target="_blank">Instagram</a>
-
 
 <footer>
-<div class="container">
-    <p><strong>Tintas Qualy Quimy, qualidades em Tintas e Texturas</strong></p>
-    <p>Atendimento em Itaquaquecetuba - SP</p>
-    <p>WhatsApp: (11) 954950044</p>
-    <p>E-mail: cliquetintas@gmail.com</p>
-    <p>🔒 Site Seguro com Certificado SSL</p>
-    <p>© 2026 Todos os direitos reservados</p>
-</div>
+<p><strong>Tintas Qualy Quimy</strong></p>
+<p>Itaquaquecetuba - SP</p>
+<p>© 2026</p>
 </footer>
 
-
-<!-- SCRIPT CONSULTOR -->
-<script>
-const numeroWhats = "5511954950044";
-
-let historico = []; // guarda histórico para voltar
-
-function abrirConsultor(tipo){
-  historico = []; // reset ao abrir
-  document.getElementById("consultorModal").style.display="flex";
-
-  switch(tipo){
-    case 'tintas':
-      mostrarTintasInicial();
-      break;
-    case 'massas':
-      mostrarMassas();
-      break;
-    case 'texturas':
-      mostrarTexturas();
-      break;
-    case 'preparacao':
-      mostrarPreparacao();
-      break;
-  }
-}
-
-function fecharConsultor(){
-  document.getElementById("consultorModal").style.display="none";
-}
-
-// ---------- TINTAS ----------
-function mostrarTintasInicial(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Onde será aplicada a tinta?</h3>
-    <button onclick="etapaInterna()">🏠 Área Interna</button>
-    <button onclick="etapaExterna()">🌤 Área Externa</button>
-    <button onclick="etapaPiso()">🚗 Piso / Garagem</button>
-    <button onclick="etapaTelhado()">🏠 Telhado</button>
-  `;
-}
-
-// Etapas internas
-function etapaInterna(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Parede nova ou repintura?</h3>
-    <button onclick="produtoFinal('Qualy Color Uso Interno (Parede Nova)','Indicada para áreas internas, excelente cobertura, baixo odor e ótimo rendimento.')">Parede Nova</button>
-    <button onclick="produtoFinal('Tinta Standard ou Premium para Repintura Interna','Boa cobertura e acabamento uniforme.')">Repintura</button>
-    <br><br>
-    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
-  `;
-}
-
-function etapaExterna(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Qual tipo de tinta você procura?</h3>
-    <button onclick="produtoFinal('Tinta Standard Externa','Boa cobertura e custo-benefício.')">Standard</button>
-    <button onclick="produtoFinal('Tinta Premium Externa','Maior resistência ao sol e chuva.')">Premium</button>
-    <button onclick="produtoFinal('Tinta Piso Externa','Ideal para áreas externas com tráfego moderado.')">Piso</button>
-    <button onclick="produtoFinal('Tinta Emborrachada Externa','Proteção contra infiltração e microfissuras.')">Emborrachada</button>
-    <br><br>
-    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
-  `;
-}
-
-function etapaPiso(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Para piso ou garagem?</h3>
-    <button onclick="produtoFinal('Tinta Piso','Resistente ao tráfego, ideal para garagens.')">Tinta Piso</button>
-    <button onclick="produtoFinal('Tinta Emborrachada para Piso','Proteção contra infiltrações e tráfego intenso.')">Emborrachada</button>
-    <br><br>
-    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
-  `;
-}
-
-function etapaTelhado(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Para telha?</h3>
-    <button onclick="produtoFinal('Tinta Emborrachada para Telhado','Reduz infiltrações e aumenta conforto térmico.')">Emborrachada</button>
-    <button onclick="produtoFinal('Tinta para Telha','Proteção e acabamento durável para telhas.')">Tinta para Telha</button>
-    <br><br>
-    <button onclick="mostrarTintasInicial()">⬅ Voltar</button>
-  `;
-}
-
-// ---------- MASSAS ----------
-function mostrarMassas(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Qual massa você precisa?</h3>
-    <button onclick="produtoFinal('Massa PVA','Ideal para preparação e nivelamento de paredes internas.')">Massa PVA</button>
-    <button onclick="produtoFinal('Massa Acrílica','Acabamento liso e resistente, pronta para pintura.')">Massa Acrílica</button>
-    <br><br>
-    <button onclick="fecharConsultor()">⬅ Voltar</button>
-  `;
-}
-
-// ---------- TEXTURAS ----------
-function mostrarTexturas(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Qual textura você procura?</h3>
-    <button onclick="produtoFinal('Grafiato','Ótimo para acabamento decorativo, resistente e elegante.')">Grafiato</button>
-    <button onclick="produtoFinal('Textura Lisa','Acabamento uniforme e suave, ideal para qualquer parede.')">Textura Lisa</button>
-    <button onclick="produtoFinal('Textura Projetada','Rendimento eficiente e acabamento moderno.')">Textura Projetada</button>
-    <button onclick="produtoFinal('Granline','Acabamento rústico e resistente para áreas externas.')">Granline</button>
-    <br><br>
-    <button onclick="fecharConsultor()">⬅ Voltar</button>
-  `;
-}
-
-// ---------- PREPARAÇÃO DE PAREDE ----------
-function mostrarPreparacao(){
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Produto para preparação de parede:</h3>
-    <button onclick="produtoFinal('Seladora Acrílica','Melhora aderência da tinta e uniformiza a absorção da parede.')">Seladora Acrílica</button>
-    <button onclick="produtoFinal('Fundo Preparador','Ideal para selar e preparar superfícies antes da pintura.')">Fundo Preparador</button>
-    <br><br>
-    <button onclick="fecharConsultor()">⬅ Voltar</button>
-  `;
-}
-
-// ---------- FINAL ---------- 
-function produtoFinal(nome, descricao){
-  const mensagem = encodeURIComponent(`Olá! Tenho interesse em ${nome}. ${descricao} Pode me enviar mais informações e valores?`);
-  document.getElementById("consultorConteudo").innerHTML = `
-    <h3>Produto recomendado:</h3>
-    <p style="font-weight:bold; font-size:20px; margin-bottom:10px;">${nome}</p>
-    <p style="margin-bottom:20px; color:#555;">${descricao}</p>
-    <a href="https://wa.me/${numeroWhats}?text=${mensagem}" target="_blank">
-      <button style="background:#25D366;color:white; padding:14px 20px; font-weight:600; border-radius:10px;">Solicitar Orçamento no WhatsApp</button>
-    </a>
-    <br><br>
-    <button onclick="fecharConsultor()" style="margin-top:15px; padding:10px 15px;">⬅ Voltar</button>
-  `;
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
