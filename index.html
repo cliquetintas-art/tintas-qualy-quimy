@@ -1,8 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tinta em Itaquaquecetuba Direto da Fábrica | Tintas Qualy Quimy</title>
+
+<meta name="description" content="Tinta, massa e textura em Itaquaquecetuba direto da fábrica. Alto rendimento, excelente cobertura e entrega rápida no Alto Tietê.">
+<meta name="keywords" content="tinta Itaquaquecetuba, fábrica de tinta Alto Tietê, grafiato, textura parede, massa PVA Itaquaquecetuba">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins;background:#f5f7fa;color:#333}
+
+/* HEADER */
+header{
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+padding:90px 20px;
+text-align:center;
+}
+
+header h1{font-size:38px;margin-bottom:20px}
+header p{max-width:850px;margin:auto;font-size:20px}
+
+/* BOTÃO WHATS PULSANDO */
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:18px 35px;
+background:#25D366;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+position:relative;
+overflow:hidden;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+.btn::after{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:rgba(255,255,255,.4);
+transform:skewX(-25deg);
+animation:shine 3s infinite;
+}
+
+@keyframes shine{100%{left:125%}}
+
+.section{padding:80px 20px;max-width:1100px;margin:auto;text-align:center}
+
+/* CONSULTOR */
+.consultor-grid{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.consultor-item{
+background:#fff;
+padding:30px;
+width:200px;
+border-radius:15px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+font-size:20px;
+}
+
+.consultor-item:hover{transform:translateY(-6px)}
+
+.consultor-modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.6);
+z-index:999;
+}
+
+.consultor-box{
+background:#fff;
+max-width:430px;
+margin:7% auto;
+padding:35px;
+border-radius:18px;
+text-align:center;
+}
+
+.consultor-box button{
+width:100%;
+margin:10px 0;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#2c5364;
+color:#fff;
+cursor:pointer;
+}
+
+/* AVALIAÇÕES */
+.avaliacoes{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+padding:90px 20px;
+text-align:center;
+}
+
+.estrelas{
+font-size:28px;
+animation:stars 1.5s infinite alternate;
+}
+
+@keyframes stars{
+from{opacity:.6}
+to{opacity:1}
+}
+
+.btn-avaliacao{
+background:#fbbc05;
+color:#000;
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+transition:.3s;
+}
+
+.btn-avaliacao:hover{
+background:#ffd54f;
+transform:scale(1.05);
+}
+
+footer{
+background:#000;
+color:#fff;
+padding:30px;
+text-align:center;
+}
+
+.whatsapp-fixo{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:12px 16px;
+border-radius:30px;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Fábrica de Tinta em Itaquaquecetuba</h1>
+
+<p>
+Tinta acrílica, tinta emborrachada, massa PVA, grafiato e texturas direto da fábrica com alto rendimento e entrega rápida no Alto Tietê.
+</p>
+
+<a class="btn"
+href="https://wa.me/5511954950044?text=Olá,%20quero%20orçamento."
+target="_blank">
+Solicitar Orçamento Agora
+</a>
+
+</header>
+
+<!-- TEXTO SEO -->
+<section class="section">
+
+<h2>Onde comprar tinta, massa e textura em Itaquaquecetuba com preço de fábrica?</h2>
+
+<p>Se você procura tinta em Itaquaquecetuba com alto rendimento e excelente cobertura, a <b>Tintas Qualy Quimy</b> é referência no Alto Tietê.</p>
+
+<p>Nossa fábrica trabalha com tinta emborrachada, massa PVA e texturas com pronta entrega e envio rápido.</p>
+
+<p>Rua Leiria, 45 – Itaquaquecetuba – SP.</p>
+
+<p>
+Fornecedor de tinta para construtoras •
+Fábrica de tinta no Alto Tietê •
+Alta durabilidade e cobertura.
+</p>
+
+</section>
+
+<!-- CONSULTOR -->
+<section class="section">
+
+<h2>Descubra o produto ideal para sua obra</h2>
+
+<div class="consultor-grid">
+<div class="consultor-item" onclick="abrirConsultor('tintas')">🎨<br>Tintas</div>
+<div class="consultor-item" onclick="abrirConsultor('massas')">🧱<br>Massas</div>
+<div class="consultor-item" onclick="abrirConsultor('texturas')">🏗<br>Texturas</div>
+<div class="consultor-item" onclick="abrirConsultor('preparacao')">🛠<br>Preparação</div>
+</div>
+
+</section>
+
+<div id="consultorModal" class="consultor-modal">
+<div class="consultor-box">
+<div id="consultorConteudo"></div>
+</div>
+</div>
+
+<!-- AVALIAÇÕES -->
+<section class="avaliacoes">
+<h2>Avaliações dos Clientes</h2>
+<div class="estrelas">⭐⭐⭐⭐⭐</div>
+<p>Avaliação máxima no Google</p>
+
+<a class="btn-avaliacao"
+href="https://www.google.com.br/search?q=Tintas+Qualy+Quimy"
+target="_blank">
+Ver avaliações
+</a>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+
+<h2>Perguntas Frequentes</h2>
+
+<p><b>Onde comprar tinta em Itaquaquecetuba?</b><br>
+Direto na fábrica Tintas Qualy Quimy — Rua Leiria, 45.</p>
+
+<p><b>Vocês entregam?</b><br>
+Sim, atendemos todo Alto Tietê.</p>
+
+<p><b>Vendem para empresas?</b><br>
+Sim, fornecemos para construtoras e lojistas.</p>
+
+</section>
+
+<footer>
+Tintas Qualy Quimy • Rua Leiria, 45 – Itaquaquecetuba – SP<br>
+WhatsApp: (11) 95495-0044
+</footer>
+
+<a class="whatsapp-fixo" href="https://wa.me/5511954950044" target="_blank">
+WhatsApp
+</a>
+
 <script>
 
 const numeroWhats="5511954950044";
-let etapaAnterior="";
 
+/* ABRIR CONSULTOR */
 function abrirConsultor(tipo){
 document.getElementById("consultorModal").style.display="block";
 
@@ -10,9 +278,12 @@ if(tipo==="tintas"){
 consultorConteudo.innerHTML=`
 <h3>Onde será aplicada a tinta?</h3>
 
-<button onclick="tintaInterna()">🏠 Uso Interno</button>
+<button onclick="produto('Qualy Color Econômica','Ideal para ambientes internos, baixo odor e ótimo rendimento.')">🏠 Uso Interno</button>
+
 <button onclick="tintaExterna()">🌤 Uso Externo</button>
+
 <button onclick="tintaPiso()">🚗 Piso / Garagem</button>
+
 <button onclick="tintaTelhado()">🏠 Telhado</button>
 `;
 }
@@ -20,91 +291,61 @@ consultorConteudo.innerHTML=`
 if(tipo==="massas"){
 consultorConteudo.innerHTML=`
 <h3>Escolha a massa:</h3>
-
-<button onclick="produto('Massa PVA','Indicada para nivelamento interno, fácil lixamento e acabamento liso.')">Massa PVA</button>
-
-<button onclick="produto('Massa Acrílica','Resistente à umidade, indicada para áreas internas e externas.')">Massa Acrílica</button>
+<button onclick="produto('Massa PVA','Indicada para uso interno sem umidade.')">Massa PVA</button>
+<button onclick="produto('Massa Acrílica','Uso interno e externo com resistência à umidade.')">Massa Acrílica</button>
 `;
 }
 
 if(tipo==="texturas"){
 consultorConteudo.innerHTML=`
 <h3>Escolha a textura:</h3>
-
-<button onclick="produto('Grafiato','Acabamento decorativo resistente para fachadas e áreas externas.')">Grafiato</button>
-
-<button onclick="produto('Textura Lisa','Visual moderno com acabamento uniforme.')">Textura Lisa</button>
-
-<button onclick="produto('Textura Projetada','Alta cobertura ideal para grandes áreas.')">Projetada</button>
-
-<button onclick="produto('Granline','Efeito decorativo sofisticado e durável.')">Granline</button>
+<button onclick="produto('Grafiato','Acabamento decorativo resistente.')">Grafiato</button>
+<button onclick="produto('Textura Lisa','Visual moderno e uniforme.')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas.')">Projetada</button>
+<button onclick="produto('Granline','Efeito decorativo sofisticado.')">Granline</button>
 `;
 }
 
 if(tipo==="preparacao"){
 consultorConteudo.innerHTML=`
 <h3>Preparação da superfície:</h3>
-
-<button onclick="produto('Seladora Acrílica','Indicada para paredes novas, reduz absorção da tinta.')">Seladora</button>
-
-<button onclick="produto('Fundo Preparador','Ideal para paredes antigas ou repintura.')">Fundo Preparador</button>
-
-<button onclick="produto('Liqui Brilho','Proteção final e acabamento com brilho.')">Liqui Brilho</button>
+<button onclick="produto('Seladora Acrílica','Para paredes novas, melhora aderência da tinta.')">Seladora</button>
+<button onclick="produto('Fundo Preparador','Para repintura e paredes fracas.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção final e brilho.')">Liqui Brilho</button>
 `;
 }
 }
 
-/* ================= TINTAS ================= */
-
-function tintaInterna(){
-etapaAnterior="tintas";
-produto(
-"Qualy Color Econômica",
-"Tinta ideal para ambientes internos, baixo odor, fácil aplicação e ótimo rendimento."
-);
-}
+/* SUBMENUS TINTAS */
 
 function tintaExterna(){
 consultorConteudo.innerHTML=`
-<h3>Escolha a linha externa:</h3>
-
-<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício para paredes e muros externos.')">Standard</button>
-
-<button onclick="produto('Tinta Premium Externa','Alta resistência ao sol e chuva com maior durabilidade.')">Premium</button>
-
-<button onclick="voltarTinta()">⬅ Voltar</button>
+<h3>Tinta Externa</h3>
+<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício para muros e fachadas.')">Standard</button>
+<button onclick="produto('Tinta Premium Externa','Maior durabilidade contra sol e chuva.')">Premium</button>
+<button onclick="abrirConsultor('tintas')">⬅ Voltar</button>
 `;
 }
 
 function tintaPiso(){
 consultorConteudo.innerHTML=`
 <h3>Piso / Garagem</h3>
-
-<button onclick="produto('Tinta para Piso','Alta resistência para garagens e áreas de tráfego leve.')">Tinta para Piso</button>
-
-<button onclick="produto('Tinta Emborrachada para Piso','Proteção impermeável aumentando a durabilidade do piso.')">Emborrachada</button>
-
-<button onclick="voltarTinta()">⬅ Voltar</button>
+<button onclick="produto('Tinta para Piso','Alta resistência para áreas de tráfego.')">Tinta Piso</button>
+<button onclick="produto('Tinta Emborrachada para Piso','Impermeabilização e proteção extra.')">Emborrachada</button>
+<button onclick="abrirConsultor('tintas')">⬅ Voltar</button>
 `;
 }
 
 function tintaTelhado(){
 consultorConteudo.innerHTML=`
-<h3>Pintura de Telhado</h3>
-
-<button onclick="produto('Tinta Emborrachada para Telhado','Protege contra infiltrações e reduz absorção de calor.')">Emborrachada</button>
-
-<button onclick="produto('Tinta para Telha','Renova e protege telhados aumentando a durabilidade.')">Tinta para Telha</button>
-
-<button onclick="voltarTinta()">⬅ Voltar</button>
+<h3>Telhado</h3>
+<button onclick="produto('Tinta Emborrachada para Telhado','Protege contra infiltrações.')">Emborrachada</button>
+<button onclick="produto('Tinta para Telha','Renova e aumenta durabilidade.')">Tinta para Telha</button>
+<button onclick="abrirConsultor('tintas')">⬅ Voltar</button>
 `;
 }
 
-function voltarTinta(){
-abrirConsultor("tintas");
-}
-
-/* ================= PRODUTO FINAL ================= */
+/* PRODUTO FINAL */
 
 function produto(nome,descricao){
 
@@ -112,21 +353,17 @@ const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
 
 consultorConteudo.innerHTML=`
 <h3>${nome}</h3>
-
 <p style="margin:15px 0">${descricao}</p>
 
 <a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
-<button style="background:#25D366">
-📲 Solicitar orçamento no WhatsApp
-</button>
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
 </a>
 
 <button onclick="history.back()">⬅ Voltar</button>
 `;
 }
 
-function fecharConsultor(){
-document.getElementById("consultorModal").style.display="none";
-}
-
 </script>
+
+</body>
+</html>
