@@ -88,7 +88,23 @@ border-radius:18px;
 text-align:center;
 animation:fadeUp .3s ease;
 }
+.fechar-modal{
+position:absolute;
+top:12px;
+right:15px;
+background:none;
+border:none;
+font-size:22px;
+cursor:pointer;
+color:#333;
+font-weight:bold;
+transition:.2s;
+}
 
+.fechar-modal:hover{
+transform:scale(1.2);
+color:#000;
+}
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(25px)}
 to{opacity:1;transform:translateY(0)}
@@ -213,8 +229,11 @@ Alta durabilidade e cobertura.
 
 <div id="consultorModal" class="consultor-modal">
 <div class="consultor-box">
+
+<button class="fechar-modal" onclick="fecharModal()">✕</button>
+
 <div id="consultorConteudo"></div>
-</div>
+
 </div>
 
 <!-- AVALIAÇÕES GOOGLE -->
@@ -348,8 +367,18 @@ trocarTela(`
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
-
+function fecharModal(){
+modal.style.display="none";
+historico=[];
+conteudo.innerHTML="";
+}
+  modal.addEventListener("click", function(e){
+if(e.target === modal){
+fecharModal();
+}
+});
 </script>
 
 </body>
 </html>
+
