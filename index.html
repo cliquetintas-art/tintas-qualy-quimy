@@ -118,8 +118,11 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-5px);
 }
- header .btn {
-  .btn-avaliacoes{
+
+header .btn:hover::before {
+ /* ===== BOTÃO AVALIAÇÕES GOOGLE ===== */
+
+.btn-avaliacoes{
   display:inline-block;
   margin-top:30px;
   padding:18px 35px;
@@ -130,12 +133,12 @@ transform:translateY(-5px);
   text-decoration:none;
   position:relative;
   overflow:hidden;
-  animation: pulseBtnGoogle 2s infinite;
-  transition: transform 0.2s, box-shadow 0.2s;
+  animation:pulseBtnGoogle 2s infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   z-index:1;
 }
 
-.btn-avaliacoes::before {
+.btn-avaliacoes::before{
   content:"";
   position:absolute;
   top:-50%;
@@ -144,7 +147,7 @@ transform:translateY(-5px);
   height:200%;
   background:rgba(255,255,255,0.3);
   transform:rotate(45deg) translateX(-100%);
-  transition: all 0.5s ease;
+  transition:all 0.5s ease;
   z-index:0;
 }
 
@@ -173,29 +176,8 @@ transform:translateY(-5px);
 
 .btn-avaliacoes:hover{
   transform:scale(1.08);
-  box-shadow:0 0 25px 10px rgba(251,188,5,0.7), inset 0 0 10px rgba(255,255,255,0.5);
+  box-shadow:0 0 25px 10px rgba(251,188,5,0.7);
 }
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  animation: pulseBtn 2s infinite;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-header .btn::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(45deg) translateX(-100%);
-  transition: all 0.5s ease;
-  z-index: 0;
-}
-
-header .btn:hover::before {
   transform: rotate(45deg) translateX(200%);
 }
 
@@ -670,6 +652,7 @@ function produtoFinal(nome, descricao){
   `;
 }
 </script>
+
 
 
 
