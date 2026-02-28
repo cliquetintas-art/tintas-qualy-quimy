@@ -269,6 +269,7 @@ WhatsApp
 <script>
 
 const numeroWhats="5511954950044";
+  let telaAnterior = "";
 
 /* ABRIR CONSULTOR */
 function abrirConsultor(tipo){
@@ -362,8 +363,14 @@ consultorConteudo.innerHTML=`
 <button onclick="history.back()">⬅ Voltar</button>
 `;
 }
+  function voltar(){
+if(telaAnterior){
+consultorConteudo.innerHTML = telaAnterior;
+}
+}
 
 </script>
 
 </body>
 </html>
+
