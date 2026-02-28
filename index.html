@@ -320,6 +320,7 @@ consultorConteudo.innerHTML=`
 /* SUBMENUS TINTAS */
 
 function tintaExterna(){
+telaAnterior = consultorConteudo.innerHTML;
 consultorConteudo.innerHTML=`
 <h3>Tinta Externa</h3>
 <button onclick="produto('Tinta Standard Externa','Excelente custo-benefício para muros e fachadas.')">Standard</button>
@@ -329,6 +330,7 @@ consultorConteudo.innerHTML=`
 }
 
 function tintaPiso(){
+telaAnterior = consultorConteudo.innerHTML;
 consultorConteudo.innerHTML=`
 <h3>Piso / Garagem</h3>
 <button onclick="produto('Tinta para Piso','Alta resistência para áreas de tráfego.')">Tinta Piso</button>
@@ -338,6 +340,7 @@ consultorConteudo.innerHTML=`
 }
 
 function tintaTelhado(){
+telaAnterior = consultorConteudo.innerHTML;
 consultorConteudo.innerHTML=`
 <h3>Telhado</h3>
 <button onclick="produto('Tinta Emborrachada para Telhado','Protege contra infiltrações.')">Emborrachada</button>
@@ -349,6 +352,22 @@ consultorConteudo.innerHTML=`
 /* PRODUTO FINAL */
 
 function produto(nome,descricao){
+
+telaAnterior = consultorConteudo.innerHTML;
+
+const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
+
+consultorConteudo.innerHTML=`
+<h3>${nome}</h3>
+<p style="margin:15px 0">${descricao}</p>
+
+<a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
+</a>
+
+<button onclick="voltar()">⬅ Voltar</button>
+`;
+}
 
 const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
 
@@ -373,4 +392,5 @@ consultorConteudo.innerHTML = telaAnterior;
 
 </body>
 </html>
+
 
