@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <style>
+.section {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.section * {
+    position: relative;
+    z-index: 2;
+}
+</style>
 <head>
 
 <meta charset="UTF-8">
@@ -389,3 +410,4 @@ tela(`
 
 </body>
 </html>
+
