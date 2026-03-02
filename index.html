@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <style>
+</style>
 <head>
 
 <meta charset="UTF-8">
@@ -211,7 +213,7 @@ Solicitar Orçamento Agora
 </header>
 
 <!-- SEO -->
-<section class="section">
+<section class="section hero-top">
 
 <h2>Onde comprar tinta, massa e textura em Itaquaquecetuba com preço de fábrica?</h2>
 
@@ -332,27 +334,27 @@ tela(`
 if(tipo==="massas"){
 tela(`
 <h3>Escolha a massa:</h3>
-<button onclick="produto('Massa PVA','Uso interno sem umidade.')">Massa PVA</button>
-<button onclick="produto('Massa Acrílica','Uso interno e externo.')">Massa Acrílica</button>
+<button onclick="produto('Massa PVA','Uso interno sem umidade,lixa facil.')">Massa PVA</button>
+<button onclick="produto('Massa Acrílica','Uso interno e externo,mais durabilidade.')">Massa Acrílica</button>
 `);
 }
 
 if(tipo==="texturas"){
 tela(`
 <h3>Escolha a textura:</h3>
-<button onclick="produto('Grafiato','Acabamento decorativo resistente.')">Grafiato</button>
-<button onclick="produto('Textura Lisa','Visual moderno.')">Textura Lisa</button>
-<button onclick="produto('Textura Projetada','Alta cobertura para fachadas.')">Textura Projetada</button>
-<button onclick="produto('Granline','Efeito sofisticado.')">Granline</button>
+<button onclick="produto('Grafiato','Acabamento decorativo resistente,pedras com risco,malha 10.')">Grafiato</button>
+<button onclick="produto('Textura Lisa','Visual moderno,aplicada rolo cabelo de anjo.')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas,aplicada com pistola.')">Textura Projetada</button>
+<button onclick="produto('Granline','Efeito sofisticado,belezaa garantida.')">Granline</button>
 `);
 }
 
 if(tipo==="preparacao"){
 tela(`
 <h3>Preparação da parede:</h3>
-<button onclick="produto('Seladora Acrílica','Para paredes novas.')">Seladora</button>
-<button onclick="produto('Fundo Preparador','Para repintura.')">Fundo Preparador</button>
-<button onclick="produto('Liqui Brilho','Proteção e brilho.')">Liqui Brilho</button>
+<button onclick="produto('Seladora Acrílica','Para paredes novas,com antimofo.')">Seladora</button>
+<button onclick="produto('Fundo Preparador','Para repintura,vem reforçada.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção e brilho,impermeabiliza de verdade.')">Liqui Brilho</button>
 `);
 }
 
@@ -361,8 +363,8 @@ tela(`
 function telaExterna(){
 tela(`
 <h3>Tinta Externa</h3>
-<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício.')">Standard</button>
-<button onclick="produto('Tinta Premium Externa','Alta durabilidade.')">Premium</button>
+<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício,ótima cobertura.')">Standard</button>
+<button onclick="produto('Tinta Premium Externa','Alta durabilidade,rende mais.')">Premium</button>
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
@@ -370,8 +372,8 @@ tela(`
 function telaPiso(){
 tela(`
 <h3>Piso / Garagem</h3>
-<button onclick="produto('Tinta Piso','Alta resistência.')">Tinta Piso</button>
-<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra.')">Emborrachada</button>
+<button onclick="produto('Tinta Piso','Alta resistência,100% resina.')">Tinta Piso</button>
+<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra,exagero de proteção.')">Emborrachada</button>
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
