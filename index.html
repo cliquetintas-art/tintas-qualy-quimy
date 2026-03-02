@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Poppins;background:#f5f7fa;color:#333}
 
@@ -47,6 +48,19 @@ animation:pulse 2s infinite;
 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
 }
 
+.btn::after{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:rgba(255,255,255,.4);
+transform:skewX(-25deg);
+animation:shine 3s infinite;
+}
+@keyframes shine{100%{left:125%}}
+
 .section{padding:80px 20px;max-width:1100px;margin:auto;text-align:center}
 
 /* CONSULTOR */
@@ -78,7 +92,10 @@ top:0;left:0;
 width:100%;height:100%;
 background:rgba(0,0,0,.6);
 z-index:999;
+animation:fade .3s;
 }
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
 
 .consultor-box{
 background:#fff;
@@ -88,6 +105,12 @@ padding:35px;
 border-radius:18px;
 text-align:center;
 position:relative;
+animation:scale .3s;
+}
+
+@keyframes scale{
+from{transform:scale(.9);opacity:0}
+to{transform:scale(1);opacity:1}
 }
 
 .fechar{
@@ -109,6 +132,13 @@ color:#fff;
 cursor:pointer;
 font-size:18px;
 font-weight:600;
+box-shadow:0 6px 18px rgba(0,0,0,.15);
+transition:.25s;
+}
+
+.consultor-box button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 /* AVALIAÇÕES */
@@ -117,6 +147,27 @@ background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:#fff;
 padding:90px 20px;
 text-align:center;
+}
+
+.estrelas{
+font-size:30px;
+animation:stars 1.5s infinite alternate;
+}
+@keyframes stars{from{opacity:.6}to{opacity:1}}
+
+.btn-avaliacao{
+background:#fbbc05;
+color:#000;
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+transition:.3s;
+}
+.btn-avaliacao:hover{
+background:#ffd54f;
+transform:scale(1.05);
 }
 
 footer{
@@ -135,32 +186,61 @@ color:#fff;
 padding:14px 18px;
 border-radius:30px;
 text-decoration:none;
+animation:pulse 2s infinite;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>Fábrica de Tinta em Itaquaquecetuba</h1>
+
 <p>
 Tinta acrílica, tinta emborrachada, massa PVA, grafiato e texturas direto da fábrica com alto rendimento e entrega rápida no Alto Tietê.
 </p>
+
 <a class="btn"
 href="https://wa.me/5511954950044?text=Olá,%20quero%20orçamento."
 target="_blank">
 Solicitar Orçamento Agora
 </a>
+
 </header>
 
+<!-- SEO -->
 <section class="section">
+
+<h2>Onde comprar tinta, massa e textura em Itaquaquecetuba com preço de fábrica?</h2>
+
+<p>Se você procura tinta em Itaquaquecetuba com alto rendimento e excelente cobertura, a <b>Tintas Qualy Quimy</b> é referência no Alto Tietê.</p>
+
+<p>Nossa fábrica trabalha com tinta emborrachada, massa PVA e texturas com pronta entrega e envio rápido.</p>
+
+<p>Rua Leiria, 45 – Itaquaquecetuba – SP.</p>
+
+<p>
+Fornecedor de tinta para construtoras •
+Fábrica de tinta no Alto Tietê •
+Alta durabilidade e cobertura.
+</p>
+
+</section>
+
+<!-- CONSULTOR -->
+<section class="section">
+
 <h2>Descubra o produto ideal para sua obra</h2>
+
 <div class="consultor-grid">
 <div class="consultor-item" onclick="abrirConsultor('tintas')">🎨<br>Tintas</div>
 <div class="consultor-item" onclick="abrirConsultor('massas')">🧱<br>Massas</div>
 <div class="consultor-item" onclick="abrirConsultor('texturas')">🏗<br>Texturas</div>
 <div class="consultor-item" onclick="abrirConsultor('preparacao')">🛠<br>Preparação</div>
 </div>
+
 </section>
 
 <div id="consultorModal" class="consultor-modal">
@@ -170,10 +250,38 @@ Solicitar Orçamento Agora
 </div>
 </div>
 
+<!-- AVALIAÇÕES -->
+<section class="avaliacoes">
+<h2>Avaliações dos Clientes</h2>
+<div class="estrelas">⭐⭐⭐⭐⭐</div>
+<p>Avaliação máxima no Google</p>
+
+<a class="btn-avaliacao"
+href="https://www.google.com.br/search?q=Tintas+Qualy+Quimy"
+target="_blank">
+Ver avaliações
+</a>
+</section>
+
+<footer>
+Tintas Qualy Quimy • Rua Leiria, 45 – Itaquaquecetuba – SP<br>
+WhatsApp: (11) 95495-0044
+</footer>
+
+<a class="whatsapp-fixo" href="https://wa.me/5511954950044" target="_blank">
+WhatsApp
+</a>
+
 <script>
+
 const numeroWhats="5511954950044";
 let historico=[];
-const consultorConteudo=document.getElementById("consultorConteudo");
+
+function abrirConsultor(tipo){
+document.getElementById("consultorModal").style.display="block";
+historico=[];
+mostrar(tipo);
+}
 
 function fecharConsultor(){
 document.getElementById("consultorModal").style.display="none";
@@ -183,14 +291,14 @@ function mostrar(html){
 consultorConteudo.innerHTML=html;
 }
 
+function voltar(){
+historico.pop();
+consultorConteudo.innerHTML=historico[historico.length-1];
+}
+
 function tela(html){
 historico.push(html);
 mostrar(html);
-}
-
-function voltar(){
-historico.pop();
-mostrar(historico[historico.length-1]);
 }
 
 function produto(nome,desc){
@@ -199,13 +307,15 @@ tela(`
 <h3>${nome}</h3>
 <p style="margin:15px 0">${desc}</p>
 <a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
-<button style="background:#25D366">📲 Solicitar orçamento</button>
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
 </a>
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
 
+/* ===== TINTAS ===== */
 function abrirConsultor(tipo){
+
 document.getElementById("consultorModal").style.display="block";
 historico=[];
 
@@ -213,14 +323,16 @@ if(tipo==="tintas"){
 tela(`
 <h3>Onde será aplicada a tinta?</h3>
 <button onclick="produto('Qualy Color Econômica','Ideal para ambientes internos.')">🏠 Uso Interno</button>
-<button onclick="produto('Tinta Premium Externa','Alta durabilidade.')">🌤 Uso Externo</button>
+<button onclick="telaExterna()">🌤 Uso Externo</button>
+<button onclick="telaPiso()">🚗 Piso / Garagem</button>
+<button onclick="telaTelhado()">🏠 Telhado</button>
 `);
 }
 
 if(tipo==="massas"){
 tela(`
 <h3>Escolha a massa:</h3>
-<button onclick="produto('Massa PVA','Uso interno.')">Massa PVA</button>
+<button onclick="produto('Massa PVA','Uso interno sem umidade.')">Massa PVA</button>
 <button onclick="produto('Massa Acrílica','Uso interno e externo.')">Massa Acrílica</button>
 `);
 }
@@ -230,17 +342,49 @@ tela(`
 <h3>Escolha a textura:</h3>
 <button onclick="produto('Grafiato','Acabamento decorativo resistente.')">Grafiato</button>
 <button onclick="produto('Textura Lisa','Visual moderno.')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas.')">Textura Projetada</button>
+<button onclick="produto('Granline','Efeito sofisticado.')">Granline</button>
 `);
 }
 
 if(tipo==="preparacao"){
 tela(`
-<h3>Preparação:</h3>
+<h3>Preparação da parede:</h3>
 <button onclick="produto('Seladora Acrílica','Para paredes novas.')">Seladora</button>
 <button onclick="produto('Fundo Preparador','Para repintura.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção e brilho.')">Liqui Brilho</button>
 `);
 }
+
 }
+
+function telaExterna(){
+tela(`
+<h3>Tinta Externa</h3>
+<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício.')">Standard</button>
+<button onclick="produto('Tinta Premium Externa','Alta durabilidade.')">Premium</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+function telaPiso(){
+tela(`
+<h3>Piso / Garagem</h3>
+<button onclick="produto('Tinta Piso','Alta resistência.')">Tinta Piso</button>
+<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra.')">Emborrachada</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+function telaTelhado(){
+tela(`
+<h3>Telhado</h3>
+<button onclick="produto('Tinta Emborrachada Telhado','Proteção contra infiltração.')">Emborrachada</button>
+<button onclick="produto('Tinta para Telha','Renova e protege telhas.')">Tinta Telha</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
 </script>
 
 </body>
