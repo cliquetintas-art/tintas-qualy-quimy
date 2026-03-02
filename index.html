@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <style>
+</style>
 <head>
 
 <meta charset="UTF-8">
@@ -189,72 +191,209 @@ text-decoration:none;
 animation:pulse 2s infinite;
 }
 
-/* ===== MODAL 5% OFF (ACRESCENTADO) ===== */
-
-.promo-overlay{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,.65);
-justify-content:center;
-align-items:center;
-z-index:5000;
-}
-
-.promo-box{
-background:#fff;
-width:90%;
-max-width:420px;
-padding:35px;
-border-radius:20px;
-text-align:center;
-position:relative;
-animation:scale .3s ease;
-}
-
-.promo-box input{
-width:100%;
-padding:14px;
-margin:8px 0;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-.promo-box button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:30px;
-background:#25D366;
-color:#fff;
-font-weight:600;
-cursor:pointer;
-margin-top:10px;
-}
-
-.fechar-promo{
-position:absolute;
-top:10px;
-right:15px;
-cursor:pointer;
-font-size:20px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== MODAL 5% OFF (ACRESCENTADO) ===== -->
-<div class="promo-overlay" id="promoOverlay">
-<div class="promo-box">
-<div class="fechar-promo" onclick="fecharPromo()">✖</div>
-<h2>🎁 Ganhe 5% OFF</h2>
-<p>Cadastre-se e receba desconto na sua primeira compra!</p>
-<input type="text" id="nomeLead" placeholder="Seu Nome">
-<input type="email" id="emailLead" placeholder="Seu Email">
-<input type="tel" id="foneLead" placeholder="Seu WhatsApp">
-<button onclick="enviarLead()">Quero meu desconto</button>
+<header>
+
+<h1>Fábrica de Tinta em Itaquaquecetuba</h1>
+
+<p>
+Tinta acrílica, tinta emborrachada, massa PVA, grafiato e texturas direto da fábrica com alto rendimento e entrega rápida no Alto Tietê.
+</p>
+
+<a class="btn"
+href="https://wa.me/5511954950044?text=Olá,%20quero%20orçamento."
+target="_blank">
+Solicitar Orçamento Agora
+</a>
+
+</header>
+
+<!-- SEO -->
+<section class="section hero-top">
+
+<h2>Onde comprar tinta, massa e textura em Itaquaquecetuba com preço de fábrica?</h2>
+
+<p>Se você procura tinta em Itaquaquecetuba com alto rendimento e excelente cobertura, a <b>Tintas Qualy Quimy</b> é referência no Alto Tietê.</p>
+
+<p>Nossa fábrica trabalha com tinta emborrachada, massa PVA e texturas com pronta entrega e envio rápido.</p>
+
+<p>Rua Leiria, 45 – Itaquaquecetuba – SP.</p>
+
+<p>
+Fornecedor de tinta para construtoras •
+Fábrica de tinta no Alto Tietê •
+Alta durabilidade e cobertura.
+</p>
+
+</section>
+
+<!-- CONSULTOR -->
+<section class="section">
+
+<h2>Descubra o produto ideal para sua obra</h2>
+
+<div class="consultor-grid">
+<div class="consultor-item" onclick="abrirConsultor('tintas')">🎨<br>Tintas</div>
+<div class="consultor-item" onclick="abrirConsultor('massas')">🧱<br>Massas</div>
+<div class="consultor-item" onclick="abrirConsultor('texturas')">🏗<br>Texturas</div>
+<div class="consultor-item" onclick="abrirConsultor('preparacao')">🛠<br>Preparação</div>
+</div>
+
+</section>
+
+<div id="consultorModal" class="consultor-modal">
+<div class="consultor-box">
+<span class="fechar" onclick="fecharConsultor()">✖</span>
+<div id="consultorConteudo"></div>
 </div>
 </div>
+
+<!-- AVALIAÇÕES -->
+<section class="avaliacoes">
+<h2>Avaliações dos Clientes</h2>
+<div class="estrelas">⭐⭐⭐⭐⭐</div>
+<p>Avaliação máxima no Google</p>
+
+<a class="btn-avaliacao"
+href="https://g.page/r/CRECbD178tUDEAE/review"
+target="_blank">
+Ver avaliações
+</a>
+</section>
+
+<footer>
+Tintas Qualy Quimy • Rua Leiria, 45 – Itaquaquecetuba – SP<br>
+WhatsApp: (11) 95495-0044
+</footer>
+
+<a class="whatsapp-fixo" href="https://wa.me/5511954950044" target="_blank">
+WhatsApp
+</a>
+
+<script>
+
+const numeroWhats="5511954950044";
+let historico=[];
+
+function abrirConsultor(tipo){
+document.getElementById("consultorModal").style.display="block";
+historico=[];
+mostrar(tipo);
+}
+
+function fecharConsultor(){
+document.getElementById("consultorModal").style.display="none";
+}
+
+function mostrar(html){
+consultorConteudo.innerHTML=html;
+}
+
+function voltar(){
+historico.pop();
+consultorConteudo.innerHTML=historico[historico.length-1];
+}
+
+function tela(html){
+historico.push(html);
+mostrar(html);
+}
+
+function produto(nome,desc){
+const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
+tela(`
+<h3>${nome}</h3>
+<p style="margin:15px 0">${desc}</p>
+<a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
+</a>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+/* ===== TINTAS ===== */
+function abrirConsultor(tipo){
+
+document.getElementById("consultorModal").style.display="block";
+historico=[];
+
+if(tipo==="tintas"){
+tela(`
+<h3>Onde será aplicada a tinta?</h3>
+<button onclick="produto('Qualy Color Econômica','Ideal para ambientes internos.')">🏠 Uso Interno</button>
+<button onclick="telaExterna()">🌤 Uso Externo</button>
+<button onclick="telaPiso()">🚗 Piso / Garagem</button>
+<button onclick="telaTelhado()">🏠 Telhado</button>
+`);
+}
+
+if(tipo==="massas"){
+tela(`
+<h3>Escolha a massa:</h3>
+<button onclick="produto('Massa PVA','Uso interno sem umidade,lixa facil.')">Massa PVA</button>
+<button onclick="produto('Massa Acrílica','Uso interno e externo,mais durabilidade.')">Massa Acrílica</button>
+`);
+}
+
+if(tipo==="texturas"){
+tela(`
+<h3>Escolha a textura:</h3>
+<button onclick="produto('Grafiato','Acabamento decorativo resistente,pedras com risco,malha 10.')">Grafiato</button>
+<button onclick="produto('Textura Lisa','Visual moderno,aplicada rolo cabelo de anjo.')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas,aplicada com pistola.')">Textura Projetada</button>
+<button onclick="produto('Granline','Efeito sofisticado,belezaa garantida.')">Granline</button>
+`);
+}
+
+if(tipo==="preparacao"){
+tela(`
+<h3>Preparação da parede:</h3>
+<button onclick="produto('Seladora Acrílica','Para paredes novas,com antimofo.')">Seladora</button>
+<button onclick="produto('Fundo Preparador','Para repintura,vem reforçada.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção e brilho,impermeabiliza de verdade.')">Liqui Brilho</button>
+`);
+}
+
+}
+
+function telaExterna(){
+tela(`
+<h3>Tinta Externa</h3>
+<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício,ótima cobertura.')">Standard</button>
+<button onclick="produto('Tinta Premium Externa','Alta durabilidade,rende mais.')">Premium</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+function telaPiso(){
+tela(`
+<h3>Piso / Garagem</h3>
+<button onclick="produto('Tinta Piso','Alta resistência,100% resina.')">Tinta Piso</button>
+<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra,exagero de proteção.')">Emborrachada</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+function telaTelhado(){
+tela(`
+<h3>Telhado</h3>
+<button onclick="produto('Tinta Emborrachada Telhado','Proteção contra infiltração.')">Emborrachada</button>
+<button onclick="produto('Tinta para Telha','Renova e protege telhas.')">Tinta Telha</button>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
