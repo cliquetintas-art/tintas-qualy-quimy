@@ -322,7 +322,7 @@ historico=[];
 if(tipo==="tintas"){
 tela(`
 <h3>Onde será aplicada a tinta?</h3>
-<button onclick="produto('Qualy Color Econômica','Ideal para ambientes internos.')">🏠 Uso Interno</button>
+<button onclick="produto('Qualy Color Econômica','Ideal para ambientes internos e paredes novas.')">🏠 Uso Interno</button>
 <button onclick="telaExterna()">🌤 Uso Externo</button>
 <button onclick="telaPiso()">🚗 Piso / Garagem</button>
 <button onclick="telaTelhado()">🏠 Telhado</button>
@@ -332,27 +332,27 @@ tela(`
 if(tipo==="massas"){
 tela(`
 <h3>Escolha a massa:</h3>
-<button onclick="produto('Massa PVA','Uso interno sem umidade.')">Massa PVA</button>
-<button onclick="produto('Massa Acrílica','Uso interno e externo.')">Massa Acrílica</button>
+<button onclick="produto('Massa PVA','Uso interno sem umidade,facil de lixar.')">Massa PVA</button>
+<button onclick="produto('Massa Acrílica','Uso interno e externo,mais durabilidade.')">Massa Acrílica</button>
 `);
 }
 
 if(tipo==="texturas"){
 tela(`
 <h3>Escolha a textura:</h3>
-<button onclick="produto('Grafiato','Acabamento decorativo resistente.')">Grafiato</button>
-<button onclick="produto('Textura Lisa','Visual moderno.')">Textura Lisa</button>
-<button onclick="produto('Textura Projetada','Alta cobertura para fachadas.')">Textura Projetada</button>
-<button onclick="produto('Granline','Efeito sofisticado.')">Granline</button>
+<button onclick="produto('Grafiato','Acabamento decorativo resistente,textura com risco de pedras,malha 10.')">Grafiato</button>
+<button onclick="produto('Textura Lisa','Visual moderno,aplicada com rolo cabelo de anjo')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas,aplica-se com pistola.')">Textura Projetada</button>
+<button onclick="produto('Granline','Efeito sofisticado,alto padrão.')">Granline</button>
 `);
 }
 
 if(tipo==="preparacao"){
 tela(`
 <h3>Preparação da parede:</h3>
-<button onclick="produto('Seladora Acrílica','Para paredes novas.')">Seladora</button>
-<button onclick="produto('Fundo Preparador','Para repintura.')">Fundo Preparador</button>
-<button onclick="produto('Liqui Brilho','Proteção e brilho.')">Liqui Brilho</button>
+<button onclick="produto('Seladora Acrílica','Para paredes novas,só aplicado uma demão.')">Seladora</button>
+<button onclick="produto('Fundo Preparador','Para repintura,mais proteção.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção e brilho,impermeabiliza de verdade.')">Liqui Brilho</button>
 `);
 }
 
@@ -361,8 +361,8 @@ tela(`
 function telaExterna(){
 tela(`
 <h3>Tinta Externa</h3>
-<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício.')">Standard</button>
-<button onclick="produto('Tinta Premium Externa','Alta durabilidade.')">Premium</button>
+<button onclick="produto('Tinta Standard Externa','Excelente custo-benefício,ótima cobertura,antimofo.')">Standard</button>
+<button onclick="produto('Tinta Premium Externa','Alta durabilidade,mais proteção,acabamento fino.')">Premium</button>
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
@@ -370,8 +370,8 @@ tela(`
 function telaPiso(){
 tela(`
 <h3>Piso / Garagem</h3>
-<button onclick="produto('Tinta Piso','Alta resistência.')">Tinta Piso</button>
-<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra.')">Emborrachada</button>
+<button onclick="produto('Tinta Piso','Alta resistência,100% resina.')">Tinta Piso</button>
+<button onclick="produto('Tinta Emborrachada Piso','Impermeabilização extra,um exagero de proteção.')">Emborrachada</button>
 <button onclick="voltar()">⬅ Voltar</button>
 `);
 }
@@ -389,3 +389,4 @@ tela(`
 
 </body>
 </html>
+
