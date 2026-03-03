@@ -333,41 +333,7 @@ WhatsApp
 const numeroWhats="5511954950044";
 let historico=[];
 
-function abrirConsultor(tipo){
-document.getElementById("consultorModal").style.display="block";
-historico=[];
-mostrar(tipo);
-}
 
-function fecharConsultor(){
-document.getElementById("consultorModal").style.display="none";
-}
-
-function mostrar(html){
-consultorConteudo.innerHTML=html;
-}
-
-function voltar(){
-historico.pop();
-consultorConteudo.innerHTML=historico[historico.length-1];
-}
-
-function tela(html){
-historico.push(html);
-mostrar(html);
-}
-
-function produto(nome,desc){
-const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
-tela(`
-<h3>${nome}</h3>
-<p style="margin:15px 0">${desc}</p>
-<a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
-<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
-</a>
-<button onclick="voltar()">⬅ Voltar</button>
-`);
-}
 
 /* ===== TINTAS ===== */
 function abrirConsultor(tipo){
@@ -445,6 +411,7 @@ tela(`
 
 </body>
 </html>
+
 
 
 
