@@ -1,4 +1,4 @@
-f<!DOCTYPE html>123
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 
@@ -190,62 +190,6 @@ animation:pulse 2s infinite;
 }
 
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HardwareStore",
-  "name": "Tintas Qualy Quimy",
-  "image": "https://cliquetintas-art.github.io/tintas-qualy-quimy/logo-qualy-quimy.jpg",
-  "url": "https://cliquetintas-art.github.io/tintas-qualy-quimy/",
-  "telephone": "+55-11-95495-0044",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Leiria, 45",
-    "addressLocality": "Itaquaquecetuba",
-    "addressRegion": "SP",
-    "postalCode": "08500-000",
-    "addressCountry": "BR"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Itaquaquecetuba"
-  },
-  "priceRange": "$$"
-}
-</script>  
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "AggregateRating",
- "itemReviewed": {
-   "@type": "LocalBusiness",
-   "name": "Tintas Qualy Quimy"
- },
- "ratingValue": "5",
- "reviewCount": "131"
-}
-</script>
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [{
-   "@type": "Question",
-   "name": "Vocês entregam tinta em Itaquaquecetuba?",
-   "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Sim, realizamos entrega rápida de tinta, massa e textura em Itaquaquecetuba e região do Alto Tietê."
-   }
- },{
-   "@type": "Question",
-   "name": "Vocês vendem direto da fábrica?",
-   "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Sim, trabalhamos com venda direta da fábrica, garantindo preço competitivo e alto rendimento."
-   }
- }]
-}
-</script>
 </head>
 
 <body>
@@ -333,7 +277,41 @@ WhatsApp
 const numeroWhats="5511954950044";
 let historico=[];
 
+function abrirConsultor(tipo){
+document.getElementById("consultorModal").style.display="block";
+historico=[];
+mostrar(tipo);
+}
 
+function fecharConsultor(){
+document.getElementById("consultorModal").style.display="none";
+}
+
+function mostrar(html){
+consultorConteudo.innerHTML=html;
+}
+
+function voltar(){
+historico.pop();
+consultorConteudo.innerHTML=historico[historico.length-1];
+}
+
+function tela(html){
+historico.push(html);
+mostrar(html);
+}
+
+function produto(nome,desc){
+const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
+tela(`
+<h3>${nome}</h3>
+<p style="margin:15px 0">${desc}</p>
+<a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
+</a>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
 
 /* ===== TINTAS ===== */
 function abrirConsultor(tipo){
@@ -411,8 +389,5 @@ tela(`
 
 </body>
 </html>
-
-
-
 
 
