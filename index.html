@@ -278,6 +278,43 @@ const numeroWhats="5511954950044";
 let historico=[];
 
 function abrirConsultor(tipo){
+document.getElementById("consultorModal").style.display="block";
+historico=[];
+mostrar(tipo);
+}
+
+function fecharConsultor(){
+document.getElementById("consultorModal").style.display="none";
+}
+
+function mostrar(html){
+consultorConteudo.innerHTML=html;
+}
+
+function voltar(){
+historico.pop();
+consultorConteudo.innerHTML=historico[historico.length-1];
+}
+
+function tela(html){
+historico.push(html);
+mostrar(html);
+}
+
+function produto(nome,desc){
+const msg=encodeURIComponent(`Olá! Quero orçamento de ${nome}.`);
+tela(`
+<h3>${nome}</h3>
+<p style="margin:15px 0">${desc}</p>
+<a href="https://wa.me/${numeroWhats}?text=${msg}" target="_blank">
+<button style="background:#25D366">📲 Solicitar orçamento no WhatsApp</button>
+</a>
+<button onclick="voltar()">⬅ Voltar</button>
+`);
+}
+
+/* ===== TINTAS ===== */
+function abrirConsultor(tipo){
 
 document.getElementById("consultorModal").style.display="block";
 historico=[];
@@ -295,27 +332,27 @@ tela(`
 if(tipo==="massas"){
 tela(`
 <h3>Escolha a massa:</h3>
-<button onclick="produto('Massa PVA','Uso interno sem umidade, facil de lixar.')">Massa PVA</button>
-<button onclick="produto('Massa Acrílica','Uso interno e externo, mais durabilidade.')">Massa Acrílica</button>
+<button onclick="produto('Massa PVA','Uso interno sem umidade,facil de lixar.')">Massa PVA</button>
+<button onclick="produto('Massa Acrílica','Uso interno e externo,mais durabilidade.')">Massa Acrílica</button>
 `);
 }
 
 if(tipo==="texturas"){
 tela(`
 <h3>Escolha a textura:</h3>
-<button onclick="produto('Grafiato','Acabamento decorativo resistente, textura com risco de pedras, malha 10.')">Grafiato</button>
-<button onclick="produto('Textura Lisa','Visual moderno, aplicada com rolo cabelo de anjo.')">Textura Lisa</button>
-<button onclick="produto('Textura Projetada','Alta cobertura para fachadas, aplica-se com pistola.')">Textura Projetada</button>
-<button onclick="produto('Granline','Efeito sofisticado, alto padrão.')">Granline</button>
+<button onclick="produto('Grafiato','Acabamento decorativo resistente,textura com risco de pedras,malha 10.')">Grafiato</button>
+<button onclick="produto('Textura Lisa','Visual moderno,aplicada com rolo cabelo de anjo')">Textura Lisa</button>
+<button onclick="produto('Textura Projetada','Alta cobertura para fachadas,aplica-se com pistola.')">Textura Projetada</button>
+<button onclick="produto('Granline','Efeito sofisticado,alto padrão.')">Granline</button>
 `);
 }
 
 if(tipo==="preparacao"){
 tela(`
 <h3>Preparação da parede:</h3>
-<button onclick="produto('Seladora Acrílica','Para paredes novas, aplicação em uma demão.')">Seladora</button>
-<button onclick="produto('Fundo Preparador','Para repintura, mais proteção.')">Fundo Preparador</button>
-<button onclick="produto('Liqui Brilho','Proteção e brilho, impermeabiliza de verdade.')">Liqui Brilho</button>
+<button onclick="produto('Seladora Acrílica','Para paredes novas,só aplicado uma demão.')">Seladora</button>
+<button onclick="produto('Fundo Preparador','Para repintura,mais proteção.')">Fundo Preparador</button>
+<button onclick="produto('Liqui Brilho','Proteção e brilho,impermeabiliza de verdade.')">Liqui Brilho</button>
 `);
 }
 
@@ -352,6 +389,5 @@ tela(`
 
 </body>
 </html>
-
 
 
